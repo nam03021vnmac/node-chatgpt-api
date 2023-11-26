@@ -41,11 +41,11 @@ export default {
         // Necessary for some people in different countries, e.g. China (https://cn.bing.com)
         host: '',
         // The "_U" cookie value from bing.com
-        userToken: '',
+        userToken: 'nothing',
         // If the above doesn't work, provide all your cookies as a string instead
         cookies: '',
         // A proxy string like "http://<ip>:<port>"
-        proxy: '',
+        proxy: 'http://64.137.89.117:6190',
         // (Optional) Set 'x-forwarded-for' for the request. You can use a fixed IPv4 address or specify a range using CIDR notation,
         // and the program will randomly select an address within that range. The 'x-forwarded-for' is not used by default now.
         // xForwardedFor: '13.104.0.0/14',
@@ -54,7 +54,7 @@ export default {
         //     genImage: true,
         // },
         // (Optional) Set to true to enable `console.debug()` logging
-        debug: false,
+        debug: true,
     },
     chatGptBrowserClient: {
         // (Optional) Support for a reverse proxy for the conversation endpoint (private API server).
@@ -71,12 +71,12 @@ export default {
     },
     // Options for the API server
     apiOptions: {
-        port: process.env.API_PORT || 3000,
+        port: process.env.API_PORT || 4000,
         host: process.env.API_HOST || 'localhost',
         // (Optional) Set to true to enable `console.debug()` logging
         debug: false,
         // (Optional) Possible options: "chatgpt", "chatgpt-browser", "bing". (Default: "chatgpt")
-        clientToUse: 'chatgpt',
+        clientToUse: 'bing',
         // (Optional) Generate titles for each conversation for clients that support it (only ChatGPTClient for now).
         // This will be returned as a `title` property in the first response of the conversation.
         generateTitles: false,
@@ -105,6 +105,6 @@ export default {
     // Options for the CLI app
     cliOptions: {
         // (Optional) Possible options: "chatgpt", "bing".
-        // clientToUse: 'bing',
+        clientToUse: 'bing',
     },
 };
